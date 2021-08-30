@@ -1,14 +1,17 @@
 defmodule PhraseClient.MixProject do
   use Mix.Project
+  @version "0.1.1"
 
   def project do
     [
       app: :phrase_client,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.10",
-      start_permanent: Mix.env() == :prod,
+      docs: [extras: ["README.md"], main: "readme", source_ref: "v#{@version}"],
       aliases: aliases(),
       deps: deps(),
+      description: description(),
+      package: package(),
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [
         coveralls: :test,
@@ -50,6 +53,21 @@ defmodule PhraseClient.MixProject do
         "credo --strict",
         "sobelow  --exit"
       ]
+    ]
+  end
+
+  defp description do
+    """
+    Un-official elixir client for Phrase.com - translate your elixir apps
+    """
+  end
+
+  defp package do
+    [
+      files: ["lib", "mix.exs", "README.md", "LICENSE"],
+      maintainers: ["Lorenzo Sinisi"],
+      licenses: ["Apache 2.0"],
+      links: %{"GitHub" => "https://github.com/lorenzosinisi/phrase_client"}
     ]
   end
 end
