@@ -1,4 +1,4 @@
-# Uno-fficial phrase.com Elixir Client
+# Un-official phrase.com Elixir Client
 
 **TODO: Support all other endpoints, add more tests, PRs welcome**
 
