@@ -37,5 +37,5 @@ How to download a translation?
 ```
 project_id = ""
 locale_id = ""
-{:ok, locale} = PhraseClient.download_locale(project_id, locale_id)
+{:ok, locale} = PhraseClient.download_locale(project_id, locale_id, %{file_format: :json})
 ```
